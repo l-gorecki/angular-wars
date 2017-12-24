@@ -1,0 +1,10 @@
+<div class='panel-container'>
+  <div class='panel' *ngFor='let resource of resources'>
+    <img class='panel-img' [src]="'/assets/'+resource[0]+'.png'">
+    <div class='panel-caption'>{{resource[0]}}</div>
+    <!-- <figure>
+        <img class='panel-img' [src]="'/assets/'+resource[0]+'.png'" />
+        <figcaption>{{resource[0]}}</figcaption>
+    </figure> -->
+  </div>
+</div>

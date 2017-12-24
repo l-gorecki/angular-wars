@@ -1,0 +1,28 @@
+.panel-container{
+  display: flex;
+  justify-content:center;
+}
+.panel{
+  height: 400px;
+  width: 200px;
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.panel-img{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: auto;
+  height: auto;
+  max-width: 90%;
+  max-height: 90%;
+
+}
+.panel-caption{
+  size: 1.5em;
+  align-self: flex-end;
+}
