@@ -1,0 +1,7 @@
+.list-tile {
+  display: flex;
+  border: 2px solid black;
+  width: 350px;
+  height: 350px;
+  font-size: 4.5em;
+}

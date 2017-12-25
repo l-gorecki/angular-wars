@@ -1,18 +1,21 @@
 export interface Person {
-    birth_year: string;
-    eye_color: string;
-    films: any[]; // zmienic typ potem
-    gender: string;
-    hair_color: string;
-    height: number;
-    mass: number;
-    homeworld: any;
-    name: string;
-    species: any;
-    starships: any;
-    vehicles: any;
+  id: number;
+  eye_color: string;
+  films: any[]; // zmienic typ potem
+  gender: string;
+  hair_color: string;
+  height: number;
+  mass: number;
+  homeworld: any;
+  name: string;
+  species: any;
+  starships: any;
+  vehicles: any;
+  url: string;
+  birth_year: string;
 }
 export interface Vehicle {
+  id: number;
   cargo_capacity: number;
   consumables: string;
   cost_in_credits: number;
@@ -26,8 +29,10 @@ export interface Vehicle {
   passengers: number;
   pilots: any[];
   vehicle_class: string;
+  url: string;
 }
 export interface Planet {
+  id: number;
   climate: string;
   diameter: number;
   gravity: string;
@@ -39,8 +44,10 @@ export interface Planet {
   rotation_period: number;
   surface_water: number;
   terrain: string;
+  url: string;
 }
 export interface Species {
+  id: number;
   average_height: number;
   average_lifespan: number;
   classification: string;
@@ -53,8 +60,10 @@ export interface Species {
   name: string;
   people: any[];
   skin_color: string;
+  url: string;
 }
 export interface Film {
+  id: number;
   characters: any[];
   director: string;
   episode_id: number;
@@ -66,8 +75,10 @@ export interface Film {
   starships: any[];
   title: string;
   vehicles: any[];
+  url: string;
 }
 export interface Starship {
+  id: number;
   MGLT: number;
   cargo_capacity: number;
   consumables: string;
@@ -83,4 +94,5 @@ export interface Starship {
   passengers: number;
   pilots: any[];
   starship_class: string;
+  url: string;
 }

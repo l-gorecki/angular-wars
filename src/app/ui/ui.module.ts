@@ -1,3 +1,4 @@
+import { ListTileComponent } from './list-view/list-tile/list-tile.component';
 import { CoreModule } from './../core/core.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -13,6 +14,6 @@ import { MatButtonModule } from '@angular/material';
     UiRoutingModule,
     MatButtonModule
   ],
-  declarations: [ListViewComponent, ListViewDetailsComponent]
+  declarations: [ListViewComponent, ListViewDetailsComponent, ListTileComponent]
 })
 export class UiModule { }

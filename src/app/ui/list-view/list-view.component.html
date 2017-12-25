@@ -1,7 +1,6 @@
-<div *ngFor='let data of resourceData'>
-  {{data.name}}
+<div class='list-tile-container'>
+  <app-list-tile [data]='data' *ngFor='let data of resourceData'></app-list-tile>
 </div>
-
 
 <button mat-raised-button color="primary" (click)='getData(prevURL)' [disabled]='!prevURL'>previous</button>
 <button mat-raised-button color="primary" (click)='getData(nextURL)' [disabled]='!nextURL'>next</button>

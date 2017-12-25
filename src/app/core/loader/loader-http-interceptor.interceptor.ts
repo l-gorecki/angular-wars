@@ -15,6 +15,16 @@ export class LoaderHttpInterceptor implements HttpInterceptor {
     this.loaderService.show();
     return next.handle(req).do((event: HttpEvent<any>) => {
       if (event instanceof HttpResponse) {
+
+        if (event.status === 200 && event.body.results) {
+          event.body.results.map(x => {
+            const tmp: string[] = x.url.split('/');
+            const id: number = +tmp[tmp.length - 2];
+            Object.assign(x, x, {id: id});
+            return x;
+          });
+        }
+
         this.loaderService.hide();
       }
     });
