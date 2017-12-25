@@ -14,11 +14,7 @@ export class HomeComponent implements OnInit {
   constructor(private apiService: ApiService) { }
 
   ngOnInit() {
-    this.apiService.getPath('').map(r => {
-      let data: any[];
-      data = Object.entries(r);
-      return data;
-    }).subscribe(data => this.resources = data);
+    this.apiService.getRoot().subscribe(data => this.resources = data);
   }
 
 }

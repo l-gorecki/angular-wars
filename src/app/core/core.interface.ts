@@ -1,4 +1,3 @@
-import { Species } from './core.interface';
 export interface Person {
     birth_year: string;
     eye_color: string;

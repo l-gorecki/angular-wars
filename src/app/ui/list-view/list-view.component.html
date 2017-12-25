@@ -1,0 +1,7 @@
+<div *ngFor='let data of resourceData'>
+  {{data.name}}
+</div>
+
+
+<button mat-raised-button color="primary" (click)='getData(prevURL)' [disabled]='!prevURL'>previous</button>
+<button mat-raised-button color="primary" (click)='getData(nextURL)' [disabled]='!nextURL'>next</button>

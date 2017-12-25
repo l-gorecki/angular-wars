@@ -19,6 +19,10 @@ export class ApiService {
   getResourceByType(type: String): Observable<Response> {
     return this.http.get<Response>(this.apiURL + type).map((res: Response) => res);
   }
+
+  getResourceByURL(url: string): Observable<Response> {
+    return this.http.get<Response>(url).map((res: Response) => res);
+  }
 }
 
 
