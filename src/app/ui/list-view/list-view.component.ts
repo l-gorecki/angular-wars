@@ -19,7 +19,7 @@ export class ListViewComponent implements OnInit {
     private apiService: ApiService) {  }
 
   ngOnInit() {
-    this.route.parent.params.subscribe((params: Params) => {
+    this.route.params.subscribe((params: Params) => {
       const requestedResource: string = params['resource'];
       this.apiService.getResourceByType(requestedResource).subscribe(data => {
         this.resourceData = data.results;

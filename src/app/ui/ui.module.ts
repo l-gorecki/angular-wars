@@ -7,6 +7,7 @@ import { UiRoutingModule } from './ui-routing.module';
 import { ListViewComponent } from './list-view/list-view.component';
 import { ListViewDetailsComponent } from './list-view-details/list-view-details.component';
 import { MatButtonModule } from '@angular/material';
+import { KeysPipe } from './list-view-details/keys.pipe';
 
 @NgModule({
   imports: [
@@ -14,6 +15,8 @@ import { MatButtonModule } from '@angular/material';
     UiRoutingModule,
     MatButtonModule
   ],
-  declarations: [ListViewComponent, ListViewDetailsComponent, ListTileComponent]
+  declarations: [ListViewComponent, ListViewDetailsComponent, ListTileComponent,
+    KeysPipe
+]
 })
 export class UiModule { }

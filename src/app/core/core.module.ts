@@ -17,7 +17,7 @@ import { LoaderHttpInterceptor } from './loader/loader-http-interceptor.intercep
   exports: [MatButtonModule, MatProgressBarModule, LoaderComponent],
   declarations: [
     LoaderComponent
-  ],
+],
   providers: [
     ApiService,
     LoaderService,

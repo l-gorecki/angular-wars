@@ -6,14 +6,9 @@ import * as entity from '../../../core/core.interface';
   templateUrl: './list-tile.component.html',
   styleUrls: ['./list-tile.component.css']
 })
-export class ListTileComponent implements OnInit {
+export class ListTileComponent {
 
   @Input() data: entity.Person | entity.Vehicle | entity.Film | entity.Planet | entity.Species | entity.Starship;
 
   constructor() { }
-
-  ngOnInit() {
-    console.log(this.data)
-  }
-
 }
