@@ -13,7 +13,7 @@ const routes: Routes = [
     path: ':id',
     component: ListViewDetailsComponent,
     data: {
-      breadcrumbs: '{{ entity.name }}'
+      breadcrumbs: '{{ entity.name || entity.title }}'
     },
     resolve: {
       entity: ApiService
