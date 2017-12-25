@@ -1,3 +1,6 @@
 <div class='list-tile' [routerLink]="['./', data.id]">
-  {{data.name}}
+  <span *ngIf="data.name;then display_name else display_title"></span>
 </div>
+
+<ng-template #display_title>{{data.title}}</ng-template>
+<ng-template #display_name>{{data.name}}</ng-template>
