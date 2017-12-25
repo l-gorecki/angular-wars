@@ -1,3 +1,4 @@
+import { McBreadcrumbsModule } from 'ngx-breadcrumbs';
 import { CoreModule } from './core/core.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -16,7 +17,8 @@ import { HomeComponent } from './home/home.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    CoreModule
+    CoreModule,
+    McBreadcrumbsModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

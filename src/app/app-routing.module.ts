@@ -6,10 +6,25 @@ const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
+    data: {
+      breadcrumbs: 'Home'
+    },
+    // children: [
+    //   {
+    //     path: 'list-view/:resource',
+    //     loadChildren: './ui/ui.module#UiModule',
+    //     data: {
+    //       breadcrumbs: 'List View'
+    //     }
+    //   }
+    // ]
   },
   {
     path: 'list-view/:resource',
-    loadChildren: './ui/ui.module#UiModule'
+    loadChildren: './ui/ui.module#UiModule',
+    data: {
+      breadcrumbs: 'List View'
+    }
   }
 ];
 

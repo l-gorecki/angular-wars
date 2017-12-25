@@ -2,11 +2,16 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import * as entity from './core.interface';
 import { Observable } from 'rxjs/Observable';
+import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from '@angular/router';
 
 @Injectable()
-export class ApiService {
+export class ApiService implements Resolve<any> {
   private apiURL = 'https://swapi.co/api/';
   constructor(private http: HttpClient) { }
+
+  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
+    return this.getResourceDetailsByType(route.params.resource, route.params.id);
+  }
 
   getRoot() {
     return this.http.get(this.apiURL).map(r => {

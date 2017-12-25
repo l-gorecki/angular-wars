@@ -17,13 +17,14 @@ export class ListViewDetailsComponent implements OnInit {
     private apiService: ApiService) {  }
 
   ngOnInit() {
-    this.route.params.subscribe((params: Params) => {
-      const requestedResource: string = params['resource'];
-      const id: number = params['id'];
-      this.apiService.getResourceDetailsByType(requestedResource, id).subscribe(data => {
-        this.resourceData = data;
-      });
-    });
+    this.resourceData = this.route.snapshot.data['entity'];
+    // this.route.params.subscribe((params: Params) => {
+    //   const requestedResource: string = params['resource'];
+    //   const id: number = params['id'];
+    //   this.apiService.getResourceDetailsByType(requestedResource, id).subscribe(data => {
+    //     this.resourceData = data;
+    //   });
+    // });
   }
 
 }
