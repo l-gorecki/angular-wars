@@ -9,23 +9,23 @@ const routes: Routes = [
     data: {
       breadcrumbs: 'Home'
     },
-    children: [
-      {
-        path: 'list-view/:resource',
-        loadChildren: './ui/ui.module#UiModule',
-        data: {
-          breadcrumbs: 'List View'
-        }
-      }
-    ]
+    // children: [
+    //   {
+    //     path: 'list-view/:resource',
+    //     loadChildren: './ui/ui.module#UiModule',
+    //     data: {
+    //       breadcrumbs: 'List View'
+    //     }
+    //   }
+    // ]
   },
-  // {
-  //   path: 'list-view/:resource',
-  //   loadChildren: './ui/ui.module#UiModule',
-  //   data: {
-  //     breadcrumbs: 'List View'
-  //   }
-  // }
+  {
+    path: 'list-view/:resource',
+    loadChildren: './ui/ui.module#UiModule',
+    data: {
+      breadcrumbs: 'List View'
+    }
+  }
 ];
 
 @NgModule({

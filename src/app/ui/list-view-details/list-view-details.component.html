@@ -1,3 +1,15 @@
 <span *ngFor="let entry of resourceData | keys">
-  {{entry.key}}: {{entry.value}} <br />
+  <div *ngIf="isString(entry.value);then text else check"></div>
+  <ng-template #text>{{entry.key}}: {{entry.value}} <br /></ng-template>
+  <ng-template #check>
+    <div *ngIf="isArray(entry.value);then array else object"></div>
+  </ng-template>
+  <ng-template #object>{{entry.key}}:{{entry.value.name}} <br /></ng-template>
+  <ng-template #array>
+    {{entry.key}}:
+    <span *ngFor='let obj of entry.value'>
+      {{obj.name || obj.title}},
+    </span> <br />
+  </ng-template>
 </span>
+

@@ -1,13 +1,13 @@
+import { EntityDetailsService } from './list-view-details/entityDetails.service';
 import { ListViewDetailsComponent } from './list-view-details/list-view-details.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ListViewComponent } from './list-view/list-view.component';
-import { ApiService } from '../core/api.service';
 
 const routes: Routes = [
   {
     path: '',
-    component: ListViewComponent,
+    component: ListViewComponent
   },
   {
     path: ':id',
@@ -16,7 +16,7 @@ const routes: Routes = [
       breadcrumbs: '{{ entity.name || entity.title }}'
     },
     resolve: {
-      entity: ApiService
+      entity: EntityDetailsService
     }
   }
 ];

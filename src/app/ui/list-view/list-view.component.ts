@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, Params } from '@angular/router';
 import { ApiService } from '../../core/api.service';
 import * as entity from '../../core/core.interface';
+import { Subscription } from 'rxjs/Subscription';
 
 @Component({
   selector: 'app-list-view',
@@ -12,6 +13,7 @@ export class ListViewComponent implements OnInit {
   public resourceData: entity.Person | entity.Vehicle | entity.Film | entity.Planet | entity.Species | entity.Starship;
   public prevURL: string;
   public nextURL: string;
+  private sub: Subscription;
 
   constructor(
     private route: ActivatedRoute,
@@ -19,10 +21,11 @@ export class ListViewComponent implements OnInit {
     private apiService: ApiService) {  }
 
   ngOnInit() {
-    this.route.params.subscribe((params: Params) => {
+    this.sub = this.route.params.subscribe((params: Params) => {
       const requestedResource: string = params['resource'];
       this.apiService.getResourceByType(requestedResource).subscribe(data => {
         this.resourceData = data.results;
+        console.log(this.resourceData)
         this.prevURL = data.previous;
         this.nextURL = data.next;
       });
@@ -35,5 +38,9 @@ export class ListViewComponent implements OnInit {
       this.prevURL = data.previous;
       this.nextURL = data.next;
     });
+  }
+  // tslint:disable-next-line:use-life-cycle-interface
+  ngOnDestroy() {
+    this.sub.unsubscribe();
   }
 }
