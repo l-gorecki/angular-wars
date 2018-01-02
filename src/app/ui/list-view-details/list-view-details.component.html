@@ -4,11 +4,13 @@
   <ng-template #check>
     <div *ngIf="isArray(entry.value);then array else object"></div>
   </ng-template>
-  <ng-template #object>{{entry.key}}:{{entry.value.name}} <br /></ng-template>
+  <ng-template #object>{{entry.key}}:<a [routerLink]="['/list-view', entry.value.resourceType, entry.value.id]">{{entry.value.name}}</a> <br /></ng-template>
   <ng-template #array>
     {{entry.key}}:
     <span *ngFor='let obj of entry.value'>
-      {{obj.name || obj.title}},
+      <a [routerLink]="['/list-view', obj.resourceType, obj.id]">
+        {{obj.name || obj.title}},
+      </a>
     </span> <br />
   </ng-template>
 </span>

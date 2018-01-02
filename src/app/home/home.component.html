@@ -1,3 +1,4 @@
+<!-- <div class='panel-container' routerLinkActive="hidden"> -->
 <div class='panel-container'>
   <div class='panel' *ngFor='let resource of resources' [routerLink]="['/list-view', resource[0]]">
     <img class='panel-img' [src]="'/assets/'+resource[0]+'.png'">

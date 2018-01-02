@@ -18,6 +18,9 @@ export class ListViewDetailsComponent implements OnInit {
 
   ngOnInit() {
     this.resourceData = this.route.snapshot.data['entity'];
+    this.route.data.subscribe(data => {
+      this.resourceData = data.entity;
+    });
   }
 
   isString(val) { return typeof val === 'string'; }

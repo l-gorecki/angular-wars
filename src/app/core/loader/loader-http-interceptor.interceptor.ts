@@ -24,13 +24,12 @@ export class LoaderHttpInterceptor implements HttpInterceptor {
             Object.assign(x, x, {id: id}, {resourceType: resourceType});
             return x;
           });
+        } else if (event.status === 200 && event.body.url) {
+            const tmp: string[] = event.body.url.split('/');
+            const id: number = +tmp[tmp.length - 2];
+            const resourceType: string = tmp[tmp.length - 3];
+            Object.assign(event.body, event.body, {id: id}, {resourceType: resourceType});
         }
-        // else if (event.status === 200 && event.body.url) {
-        //     const tmp: string[] = event.body.url.split('/');
-        //     const id: number = +tmp[tmp.length - 2];
-        //     const resourceType: string = tmp[tmp.length - 3];
-        //     Object.assign(event.body, event.body, {id: id}, {resourceType: resourceType});
-        // }
 
         this.loaderService.hide();
       }

@@ -40,7 +40,7 @@ export class EntityDetailsService {
   }
 
   isReference = ([key, value]) => {
-    if (key === 'url' || key === 'resourceType' || key === 'id') {
+    if (key === 'url' || key === 'resourceType' || key === 'id' || (!isNaN(parseFloat(value)) && isFinite(value))) {
       return;
     }
     if (value instanceof  Array) {
